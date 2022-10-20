@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "rootDir": ".",
+    "jsx": "react-jsx",
+    "declaration": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "target": "es2017",
+    "moduleResolution": "node",
+    "module": "esnext",
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "typeRoots": [
+      "node_modules/@modbros/dashboard-sdk/types/"
+    ]
+  },
+  "files": [],
+  "include": []
+}

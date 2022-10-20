@@ -1,0 +1,21 @@
+{
+  "name": "@modbros/mobro-clock-widgets",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "17.0.2",
+    "@types/styled-components": "^5.1.15",
+    "prettier": "^2.5.1"
+  },
+  "dependencies": {
+    "@modbros/dashboard-sdk": "0.0.6",
+    "@visx/visx": "^2.5.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-spring": "^9.4.4",
+    "styled-components": "5.3.5"
+  }
+}
