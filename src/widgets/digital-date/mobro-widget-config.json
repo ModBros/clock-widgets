@@ -1,0 +1,97 @@
+{
+  "name": "digital-date",
+  "displayName": "Digital Date",
+  "filename": "DigitalDateWidget.tsx",
+  "config": [
+    {
+      "name": "format",
+      "label": "Format",
+      "type": "select",
+      "options": [
+        {
+          "label": "DMY",
+          "value": "D-M-Y"
+        },
+        {
+          "label": "YMD",
+          "value": "Y-M-D"
+        },
+        {
+          "label": "MDY",
+          "value": "M-D-Y"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "label": "Separator",
+      "type": "select",
+      "options": [
+        {
+          "label": "Dot",
+          "value": "."
+        },
+        {
+          "label": "Dash",
+          "value": "-"
+        },
+        {
+          "label": "Slash",
+          "value": "/"
+        }
+      ]
+    },
+    {
+      "label": "Style",
+      "type": "separator"
+    },
+    {
+      "name": "text_color",
+      "label": "Text Color",
+      "type": "color"
+    },
+    {
+      "name": "font_family",
+      "label": "Font",
+      "type": "font"
+    },
+    {
+      "name": "align_horizontal",
+      "label": "Align Horizontal",
+      "type": "select",
+      "options": [
+        {
+          "label": "Left",
+          "value": "flex-start"
+        },
+        {
+          "label": "Center",
+          "value": "center"
+        },
+        {
+          "label": "Right",
+          "value": "flex-end"
+        }
+      ]
+    },
+    {
+      "name": "align_vertical",
+      "label": "Align Vertical",
+      "type": "select",
+      "options": [
+        {
+          "label": "Top",
+          "value": "flex-start"
+        },
+        {
+          "label": "Center",
+          "value": "center"
+        },
+        {
+          "label": "Bottom",
+          "value": "flex-end"
+        }
+      ]
+    }
+  ]
+}

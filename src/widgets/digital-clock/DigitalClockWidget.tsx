@@ -1,20 +1,6 @@
 import React, {FunctionComponent, ReactElement, useEffect, useState} from "react";
-import {
-  MissingConfigPlaceholder,
-  useCheckboxField,
-  useColorField,
-  useFontField,
-  useSelectField
-} from "@modbros/dashboard-sdk";
-import styled from "styled-components";
-
-const StyledClockWrapper = styled.div`
-  display: flex;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-`
+import {MissingConfigPlaceholder, useCheckboxField, useSelectField} from "@modbros/dashboard-sdk";
+import {DigitalWrapper} from "../../components/DigitalWrapper";
 
 function formatTimePart(part: string | number): string {
   return part.toString().padStart(2, '0');
@@ -50,12 +36,10 @@ function format12h(now: Date, hideSeconds: boolean): string {
   return `${parts.join(':')}${suffix}`
 }
 
-const Digital: FunctionComponent = () => {
+const DigitalClockWidget: FunctionComponent = () => {
   const [now, setNow] = useState<Date>(new Date())
   const format = useSelectField({field: 'format', defaultValue: '24h'});
   const hideSeconds = useCheckboxField({field: 'hide_seconds'})
-  const color = useColorField({field: 'text_color', defaultColor: '#000000'})
-  const fontFamily = useFontField({field: 'font_family'})
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -78,13 +62,10 @@ const Digital: FunctionComponent = () => {
   }
 
   return (
-    <StyledClockWrapper style={{
-      color: color.toRgbaCss(),
-      fontFamily: fontFamily
-    }}>
+    <DigitalWrapper>
       {content}
-    </StyledClockWrapper>
+    </DigitalWrapper>
   )
 }
 
-export default Digital
+export default DigitalClockWidget

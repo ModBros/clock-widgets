@@ -1,0 +1,79 @@
+{
+  "name": "digital-clock",
+  "displayName": "Digital Clock",
+  "filename": "DigitalClockWidget.tsx",
+  "config": [
+    {
+      "name": "format",
+      "label": "Format",
+      "type": "select",
+      "options": [
+        {
+          "label": "12h",
+          "value": "12h"
+        },
+        {
+          "label": "24h",
+          "value": "24h"
+        }
+      ]
+    },
+    {
+      "name": "hide_seconds",
+      "label": "Hide Seconds",
+      "type": "checkbox"
+    },
+    {
+      "label": "Style",
+      "type": "separator"
+    },
+    {
+      "name": "text_color",
+      "label": "Text Color",
+      "type": "color"
+    },
+    {
+      "name": "font_family",
+      "label": "Font",
+      "type": "font"
+    },
+    {
+      "name": "align_horizontal",
+      "label": "Align Horizontal",
+      "type": "select",
+      "options": [
+        {
+          "label": "Left",
+          "value": "flex-start"
+        },
+        {
+          "label": "Center",
+          "value": "center"
+        },
+        {
+          "label": "Right",
+          "value": "flex-end"
+        }
+      ]
+    },
+    {
+      "name": "align_vertical",
+      "label": "Align Vertical",
+      "type": "select",
+      "options": [
+        {
+          "label": "Top",
+          "value": "flex-start"
+        },
+        {
+          "label": "Center",
+          "value": "center"
+        },
+        {
+          "label": "Bottom",
+          "value": "flex-end"
+        }
+      ]
+    }
+  ]
+}
