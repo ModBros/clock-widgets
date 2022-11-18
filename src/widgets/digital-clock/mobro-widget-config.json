@@ -38,6 +38,11 @@
       "type": "font"
     },
     {
+      "name": "font_size",
+      "label": "Font Size",
+      "type": "number"
+    },
+    {
       "name": "align_horizontal",
       "label": "Align Horizontal",
       "type": "select",
