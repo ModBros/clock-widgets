@@ -8,7 +8,7 @@ function formatDatePart(part: string | number): string {
 
 function formatDate(now: Date, format: string, separator: string): string {
   const date = formatDatePart(now.getDate())
-  const month = formatDatePart(now.getMonth())
+  const month = formatDatePart(now.getMonth() + 1)
   const year = now.getFullYear().toString()
 
   return format

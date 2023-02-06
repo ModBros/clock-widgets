@@ -8,7 +8,9 @@
     "forceConsistentCasingInFileNames": true,
     "target": "es2021",
     "lib": [
-      "es2021"
+      "ES2021",
+      "ES2021.String",
+      "DOM"
     ],
     "moduleResolution": "node",
     "module": "esnext",
