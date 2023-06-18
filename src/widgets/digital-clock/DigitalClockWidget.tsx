@@ -1,15 +1,25 @@
-import React, {FunctionComponent, ReactElement, useEffect, useState} from "react";
-import {MissingConfigPlaceholder, useCheckboxField, useSelectField} from "@modbros/dashboard-sdk";
-import {DigitalWrapper} from "../../components/DigitalWrapper";
+import React, {
+  FunctionComponent,
+  ReactElement,
+  useEffect,
+  useState
+} from 'react'
+import {
+  MissingConfigPlaceholder,
+  useCheckboxField,
+  useSelectField,
+  useSystemTime
+} from '@modbros/dashboard-sdk'
+import { DigitalWrapper } from '../../components/DigitalWrapper'
 
 function formatTimePart(part: string | number): string {
-  return part.toString().padStart(2, '0');
+  return part.toString().padStart(2, '0')
 }
 
 function format24h(now: Date, hideSeconds: boolean): string {
-  const hours = formatTimePart(now.getHours());
-  const minutes = formatTimePart(now.getMinutes());
-  const seconds = formatTimePart(now.getSeconds());
+  const hours = formatTimePart(now.getHours())
+  const minutes = formatTimePart(now.getMinutes())
+  const seconds = formatTimePart(now.getSeconds())
 
   const parts = [hours, minutes]
 
@@ -23,9 +33,9 @@ function format24h(now: Date, hideSeconds: boolean): string {
 function format12h(now: Date, hideSeconds: boolean): string {
   const suffix = now.getHours() < 12 ? ' AM' : ' PM'
   const h = now.getHours() % 12
-  const hours = formatTimePart(h ? h : 12);
-  const minutes = formatTimePart(now.getMinutes());
-  const seconds = formatTimePart(now.getSeconds());
+  const hours = formatTimePart(h ? h : 12)
+  const minutes = formatTimePart(now.getMinutes())
+  const seconds = formatTimePart(now.getSeconds())
 
   const parts = [hours, minutes]
 
@@ -37,21 +47,17 @@ function format12h(now: Date, hideSeconds: boolean): string {
 }
 
 const DigitalClockWidget: FunctionComponent = () => {
-  const [now, setNow] = useState<Date>(new Date())
-  const format = useSelectField({field: 'format', defaultValue: '24h'});
-  const hideSeconds = useCheckboxField({field: 'hide_seconds'})
+  const now = useSystemTime()
+  const format = useSelectField({ field: 'format', defaultValue: '24h' })
+  const hideSeconds = useCheckboxField({ field: 'hide_seconds' })
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setNow(new Date());
-    }, 1000);
+  if (!now) {
+    return null
+  }
 
-    return () => {
-      clearInterval(interval)
-    }
-  })
-
-  let content: ReactElement | string = <MissingConfigPlaceholder text='Please select a valid format'/>
+  let content: ReactElement | string = (
+    <MissingConfigPlaceholder text='Please select a valid format' />
+  )
 
   if (format === '24h') {
     content = format24h(now, hideSeconds)
@@ -61,11 +67,7 @@ const DigitalClockWidget: FunctionComponent = () => {
     content = format12h(now, hideSeconds)
   }
 
-  return (
-    <DigitalWrapper>
-      {content}
-    </DigitalWrapper>
-  )
+  return <DigitalWrapper>{content}</DigitalWrapper>
 }
 
 export default DigitalClockWidget

@@ -1,6 +1,11 @@
-import React, {FunctionComponent} from "react";
-import styled from "styled-components";
-import {useColorField, useFontField, useNumberField, useSelectField} from "@modbros/dashboard-sdk";
+import React, { FunctionComponent } from 'react'
+import styled from 'styled-components'
+import {
+  useColorField,
+  useFontField,
+  useNumberField,
+  useSelectField
+} from '@modbros/dashboard-sdk'
 
 const StyledClockWrapper = styled.div`
   display: flex;
@@ -9,12 +14,18 @@ const StyledClockWrapper = styled.div`
 `
 
 export const DigitalWrapper: FunctionComponent = (props) => {
-  const {children} = props;
-  const color = useColorField({field: 'text_color', defaultColor: '#000000'})
-  const fontFamily = useFontField({field: 'font_family'})
-  const justifyContent = useSelectField({field: 'align_horizontal', defaultValue: 'center'})
-  const alignItems = useSelectField({field: 'align_vertical', defaultValue: 'center'})
-  const fontSize = useNumberField({field: 'font_size', defaultValue: null})
+  const { children } = props
+  const color = useColorField({ field: 'text_color', defaultColor: '#000000' })
+  const fontFamily = useFontField({ field: 'font_family' })
+  const justifyContent = useSelectField({
+    field: 'align_horizontal',
+    defaultValue: 'center'
+  })
+  const alignItems = useSelectField({
+    field: 'align_vertical',
+    defaultValue: 'center'
+  })
+  const fontSize = useNumberField({ field: 'font_size', defaultValue: null })
 
   return (
     <StyledClockWrapper

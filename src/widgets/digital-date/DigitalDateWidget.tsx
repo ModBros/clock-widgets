@@ -1,9 +1,9 @@
-import React, {FunctionComponent, useEffect, useState} from "react";
-import {useSelectField} from "@modbros/dashboard-sdk";
-import {DigitalWrapper} from "../../components/DigitalWrapper";
+import React, { FunctionComponent } from 'react'
+import { useSelectField, useSystemTime } from '@modbros/dashboard-sdk'
+import { DigitalWrapper } from '../../components/DigitalWrapper'
 
 function formatDatePart(part: string | number): string {
-  return part.toString().padStart(2, '0');
+  return part.toString().padStart(2, '0')
 }
 
 function formatDate(now: Date, format: string, separator: string): string {
@@ -19,28 +19,17 @@ function formatDate(now: Date, format: string, separator: string): string {
 }
 
 const DigitalDateWidget: FunctionComponent = () => {
-  const [now, setNow] = useState<Date>(new Date())
-  const format = useSelectField({field: 'format', defaultValue: 'Y-M-D'});
-  const separator = useSelectField({field: 'separator', defaultValue: '-'})
+  const now = useSystemTime({
+    refreshInterval: 60_000
+  })
+  const format = useSelectField({ field: 'format', defaultValue: 'Y-M-D' })
+  const separator = useSelectField({ field: 'separator', defaultValue: '-' })
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const newNow = new Date();
-      if (now.toDateString() !== newNow.toDateString()) {
-        setNow(newNow);
-      }
-    }, 60_000);
+  if (!now) {
+    return null
+  }
 
-    return () => {
-      clearInterval(interval)
-    }
-  }, [now])
-
-  return (
-    <DigitalWrapper>
-      {formatDate(now, format, separator)}
-    </DigitalWrapper>
-  )
+  return <DigitalWrapper>{formatDate(now, format, separator)}</DigitalWrapper>
 }
 
 export default DigitalDateWidget

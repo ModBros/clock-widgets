@@ -8,18 +8,13 @@
     "forceConsistentCasingInFileNames": true,
     "target": "es2021",
     "lib": [
-      "ES2021",
-      "ES2021.String",
-      "DOM"
+      "es2021"
     ],
     "moduleResolution": "node",
     "module": "esnext",
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "baseUrl": ".",
-    "typeRoots": [
-      "node_modules/@modbros/dashboard-sdk/types/"
-    ]
+    "baseUrl": "."
   },
   "files": [],
   "include": []
