@@ -1,5 +1,6 @@
 {
   "name": "modbros_clocks",
   "displayName": "Clocks",
-  "description": "Customizable digital clock and date widgets."
+  "description": "Customizable digital clock and date widgets.",
+  "author": "ModBros"
 }
