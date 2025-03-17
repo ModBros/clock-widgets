@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { PropsWithChildren } from 'react'
 import styled from 'styled-components'
 import {
   useColorField,
@@ -13,7 +13,7 @@ const StyledClockWrapper = styled.div`
   height: 100%;
 `
 
-export const DigitalWrapper: FunctionComponent = (props) => {
+export const DigitalWrapper = (props: PropsWithChildren) => {
   const { children } = props
   const color = useColorField({ field: 'text_color', defaultColor: '#000000' })
   const fontFamily = useFontField({ field: 'font_family' })

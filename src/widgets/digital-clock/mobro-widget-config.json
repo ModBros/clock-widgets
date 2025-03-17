@@ -24,6 +24,16 @@
       "type": "checkbox"
     },
     {
+      "name": "hide_suffix",
+      "label": "Hide AM / PM",
+      "type": "checkbox"
+    },
+    {
+      "name": "no_leading_zero",
+      "label": "No leading hour zero",
+      "type": "checkbox"
+    },
+    {
       "label": "Style",
       "type": "separator"
     },
@@ -78,6 +88,30 @@
           "label": "Bottom",
           "value": "flex-end"
         }
+      ]
+    }
+  ],
+  "layout": [
+    {
+      "type": "fieldset",
+      "label": "Time Format",
+      "children": [
+        "format",
+        "hide_seconds",
+        "hide_suffix",
+        "no_leading_zero"
+      ]
+    },
+    {
+      "type": "fieldset",
+      "label": "Style",
+      "collapsible": true,
+      "children": [
+        "text_color",
+        "font_family",
+        "font_size",
+        "align_horizontal",
+        "align_vertical"
       ]
     }
   ]
