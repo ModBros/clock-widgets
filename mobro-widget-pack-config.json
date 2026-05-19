@@ -1,6 +1,6 @@
 {
   "name": "modbros_clocks",
   "displayName": "Clocks",
-  "description": "Customizable digital clock and date widgets.",
+  "description": "A collection of customizable clock and date widgets for displaying your system time on your MoBro dashboard.",
   "author": "ModBros"
 }

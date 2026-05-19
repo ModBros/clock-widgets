@@ -1,11 +1,13 @@
 {
   "name": "digital-date",
   "displayName": "Digital Date",
+  "description": "A digital date widget that shows your system date without the time component.",
   "filename": "DigitalDateWidget.tsx",
   "config": [
     {
       "name": "format",
       "label": "Format",
+      "description": "The order in which day, month, and year are displayed (e.g. DMY for day-month-year).",
       "type": "select",
       "options": [
         {
@@ -25,6 +27,7 @@
     {
       "name": "separator",
       "label": "Separator",
+      "description": "The character used to separate the day, month, and year values.",
       "type": "select",
       "options": [
         {
@@ -48,21 +51,25 @@
     {
       "name": "text_color",
       "label": "Text Color",
+      "description": "The color of the date text.",
       "type": "color"
     },
     {
       "name": "font_family",
       "label": "Font",
+      "description": "The font family used to render the date text.",
       "type": "font"
     },
     {
       "name": "font_size",
       "label": "Font Size",
+      "description": "The font size of the date text in pixels.",
       "type": "number"
     },
     {
       "name": "align_horizontal",
       "label": "Align Horizontal",
+      "description": "Controls the horizontal alignment of the date within the widget.",
       "type": "select",
       "options": [
         {
@@ -82,6 +89,7 @@
     {
       "name": "align_vertical",
       "label": "Align Vertical",
+      "description": "Controls the vertical alignment of the date within the widget.",
       "type": "select",
       "options": [
         {

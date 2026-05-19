@@ -1,11 +1,13 @@
 {
   "name": "digital-clock",
   "displayName": "Digital Clock",
+  "description": "A digital clock widget that displays your system time in real time.",
   "filename": "DigitalClockWidget.tsx",
   "config": [
     {
       "name": "format",
       "label": "Format",
+      "description": "Choose between 12-hour (AM/PM) and 24-hour time display.",
       "type": "select",
       "options": [
         {
@@ -21,16 +23,19 @@
     {
       "name": "hide_seconds",
       "label": "Hide Seconds",
+      "description": "When enabled, the seconds portion of the clock is not displayed.",
       "type": "checkbox"
     },
     {
       "name": "hide_suffix",
       "label": "Hide AM / PM",
+      "description": "When enabled, the AM/PM suffix is hidden. Only applies when using 12-hour format.",
       "type": "checkbox"
     },
     {
       "name": "no_leading_zero",
       "label": "No leading hour zero",
+      "description": "When enabled, a leading zero is not added to single-digit hours (e.g. '9:00' instead of '09:00').",
       "type": "checkbox"
     },
     {
@@ -40,21 +45,25 @@
     {
       "name": "text_color",
       "label": "Text Color",
+      "description": "The color of the clock text.",
       "type": "color"
     },
     {
       "name": "font_family",
       "label": "Font",
+      "description": "The font family used to render the clock text.",
       "type": "font"
     },
     {
       "name": "font_size",
       "label": "Font Size",
+      "description": "The font size of the clock text in pixels.",
       "type": "number"
     },
     {
       "name": "align_horizontal",
       "label": "Align Horizontal",
+      "description": "Controls the horizontal alignment of the clock within the widget.",
       "type": "select",
       "options": [
         {
@@ -74,6 +83,7 @@
     {
       "name": "align_vertical",
       "label": "Align Vertical",
+      "description": "Controls the vertical alignment of the clock within the widget.",
       "type": "select",
       "options": [
         {
